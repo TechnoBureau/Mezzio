@@ -25,4 +25,6 @@ use Psr\Container\ContainerInterface;
  */
 
 return static function (Application $app, MiddlewareFactory $factory, ContainerInterface $container): void {
+	$app->get('/ping', App\Handler\PingHandler::class, 'ping');
+	$app->get('/', App\Handler\PingHandler::class, 'Home');
 };
